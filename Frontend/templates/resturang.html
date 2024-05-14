@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Resturang: {{resturang.1}}</h2>
+<ul>
+{% for rett in meny %}
+    <li>
+        <h3>{{rett.rett}}</h3>
+        <img class="rett_bilde" src="http://127.0.0.1:510/get_image/{{rett.bilde}}" alt="bilde til {{rett.rett}}">
+        <p>{{rett.beskrivelse}}</p>
+        <p>{{rett.pris}}</p>
+    </li>
+{% endfor %}
+</ul>
+
+
+{% endblock %}
