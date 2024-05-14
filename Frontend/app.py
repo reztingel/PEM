@@ -12,17 +12,21 @@ def entry():
 
 @app.route("/front", methods=["GET"])
 def front():
-    category = request.args.get("category")
-    if category is None:
-        category = "all"
-    url = 'https://fakestoreapi.com/products/category/' + category
-    if category == "all":
-        url = 'https://fakestoreapi.com/products'
+    url = 'https://fakestoreapi.com/products'
     response = requests.get(url)
     data = response.json()
-    return render_template("index.html", data=data, selected_category=category)
+    return render_template("index.html", data=data)
 
 
+
+@app.route('/get_product/<product_id>', methods = ["GET","POST"])
+def get_product(product_id):
+    if product_id is None:
+        return "No product ID provided"
+    url = 'https://fakestoreapi.com/products/' + product_id
+    response = requests.get(url)
+    data = response.json()
+    return render_template("productt.html", data=data)
 
 
 

@@ -2,7 +2,11 @@
 
 {% block content %}
 
-<div class="productPage">
+
+
+
+
+  <div class="productPage">
     {% for item in data %}
     <form class="products" action="{{ url_for('get_product', product_id=item.id) }}" methods="POST">
         <img id="im" src="{{item.image}}" alt="{{ item.title }}">
@@ -12,7 +16,6 @@
     </form>
     {% endfor %}
   </div>
-
-
+  
 
 {% endblock %}
