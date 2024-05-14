@@ -36,7 +36,7 @@ resturanger = [{"navn": "PAsTA", "id": 1}, {"navn": "TACO", "id": 2}]
 meny1 = [{"rid": 1, "rett": "Kjøttboler", "bilde": "kjøttboller.jpg", "beskrivelse": "kjøttboller med saus og poteter", "pris": 20},
          {"rid": 1, "rett": "pizza", "bilde": "pizza.jpg", "beskrivelse": "pizza med saus og pepperoni og ost", "pris": 45},
          {"rid": 1, "rett": "hamburger", "bilde": "burger.jpg", "beskrivelse": "hamburger med ost", "pris": 30},
-         {"rid": 1, "rett": "fish n chips", "bilde": "fish_chips.jpg", "beskrivelse": "fish n chips med fish n chips", "pris": 40},
+         {"rid": 1, "rett": "fish n chips", "bilde": "fish-and-chips.jpg", "beskrivelse": "fish n chips med fish n chips", "pris": 40},
          {"rid": 1, "rett": "pasta", "bilde": "pasta.jpg", "beskrivelse": "pasta med pølse bitter", "pris": 30}]
 
 
