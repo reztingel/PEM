@@ -18,7 +18,7 @@ def get_image(image_name):
 
 
 @app.route('/get_resturanger', methods = ["GET"])
-def get_resturants():
+def get_resturanger():
     cur.execute("SELECT * FROM resturanger")
     content = cur.fetchall()
     result = []
@@ -27,10 +27,10 @@ def get_resturants():
     return result
 
 
-@app.route('/get_resturant', methods = ["GET"])
-def get_resturant():
-    rid = request.get_json()["rid"]
-    cur.execute("SELECT * FROM resturanger WHERE id = ?", (rid,))
+@app.route('/get_resturang', methods = ["GET"])
+def get_resturang():
+    sid = request.get_json()["sid"]
+    cur.execute("SELECT * FROM resturanger WHERE id = ?", (sid,))
     content = cur.fetchone()
     result = [content[0], content[1]]
     return result
@@ -39,8 +39,8 @@ def get_resturant():
 
 @app.route('/get_resturang_meny', methods = ["GET"])
 def resturang_meny():
-    rid = request.get_json()["rid"]
-    cur.execute("SELECT * FROM meny_retter WHERE resturang_id = ?", (rid,))
+    sid = request.get_json()["sid"]
+    cur.execute("SELECT * FROM meny_retter WHERE resturang_id = ?", (sid,))
     content = cur.fetchall()
     result = []
     for data in content:
