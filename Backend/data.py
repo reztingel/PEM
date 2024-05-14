@@ -28,3 +28,6 @@ cur.execute("""CREATE TABLE IF NOT EXISTS meny_retter(
             pris integer NOT NULL
             )""")
 con.commit()
+
+brukere = ["REST1", "REST2", "REST3"]
+resturanger = [{"navn": "PAsTA", "id": 1}, {"navn": "TACO", "id": 2}]
