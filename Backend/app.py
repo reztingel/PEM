@@ -44,7 +44,7 @@ def resturang_meny():
     content = cur.fetchall()
     result = []
     for data in content:
-        result.append({"id": data[0], "rid": data[1], "rett": data[2], "bilde": data[3], "besrkivelse": data[4], "pris": data[5]})
+        result.append({"id": data[0], "sid": data[1], "rett": data[2], "bilde": data[3], "besrkivelse": data[4], "pris": data[5]})
     return result
 
 
