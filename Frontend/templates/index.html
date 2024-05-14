@@ -6,7 +6,7 @@
 <ul>
     {% for resturang in resturanger %}
     <li>
-        <form action="{{url_for('get_resturang', sid=resturang.id) }}" method="get" name="restlink">
+        <form action="{{url_for('get_resturanger', sid=resturang.id) }}" method="get" name="restlink">
             <h2 onclick="document.forms.restlink.submit()">{{resturang.navn}}</h2>
             <input type="submit" value="meny">
         </form>

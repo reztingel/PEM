@@ -14,7 +14,7 @@ cur = con.cursor()
 
 @app.route('/get_image/<image_name>', methods = ["GET"])
 def get_image(image_name):
-    return send_from_directory(r"C:\Users\Ton\OneDrive - Innlandet fylkeskommune\Skrivebord\Eksamenforbredning\Backend\static\images", image_name)
+    return send_from_directory("C:\\Users\\Ton\OneDrive - Innlandet fylkeskommune\\Skrivebord\\Eksamenforbredning\\Backend\\static\\images", image_name)
 
 
 @app.route('/get_resturanger', methods = ["GET"])
@@ -44,7 +44,7 @@ def resturang_meny():
     content = cur.fetchall()
     result = []
     for data in content:
-        result.append({"id": data[0], "sid": data[1], "rett": data[2], "bilde": data[3], "besrkivelse": data[4], "pris": data[5]})
+        result.append({"id": data[0], "sid": data[1], "rett": data[2], "bilde": data[3], "beskrivelse": data[4], "pris": data[5]})
     return result
 
 

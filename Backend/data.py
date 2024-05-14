@@ -5,23 +5,23 @@ cur = con.cursor()
 
 
 cur.execute("""CREATE TABLE IF NOT EXISTS brukere(
-            id integer primay key NOT NULL;
-            navn text NOT NULL,
-            passord text NOT NULL
+            ID INTEGER PRIMARY KEY NOT NULL;
+            navn TEXT NOT NULL,
+            passord TEXT NOT NULL
             )""")
 con.commit()
 
 
 cur.execute("""CREATE TABLE IF NOT EXISTS resturanger(
-            id integer primary key NOT NULL,
-            navn text NOT NULL
+            ID INTEGER PRIMARY KEY NOT NULL,
+            navn TEXT NOT NULL
             )""")
 con.commit()
 
 
 cur.execute("""CREATE TABLE IF NOT EXISTS meny_retter(
-            retter_id integer primary key NOT NULL,
-            resturang_id integer NOT NULL,
+            retter_id INTEGER PRIMARY KEY NOT NULL,
+            resturang_id INTEGER NOT NULL,
             rett text NOT NULL,
             bilde text NOT NULL,
             beskrivelse text NOT NULL,
@@ -45,6 +45,6 @@ cur.execute("DELETE FROM resturanger")
 cur.execute("DELETE FROM meny_retter")
 con.commit()
 cur.executemany("INSERT INTO brukere(navn, passord) VALUES(?, 'Passord')", [(bruker,) for bruker in brukere])
-cur.executemany("INSERT INTO resturanger(id,navn) VALUES(?,?)", [(rest["id"], rest["navn"]) for rest in resturanger])
-cur.executemany("INSERT INTO meny_retter(resturang_id, rett, bilde, beskrivelse, pris) VALUES(?,?,?,?,?)", [(rett["sid"], rett["rett"], rett["bilde"], rett["beskrivelse"], rett["pris"]) for rett in meny1])
+cur.executemany("INSERT INTO resturanger(id, navn) VALUES(?,?)", [(rest["id"], rest["navn"]) for rest in resturanger])
+cur.executemany("INSERT INTO meny_retter(resturang_id, rett,bilde, beskrivelse, pris) VALUES(?,?,?,?,?)", [(rett["sid"],rett["rett"],rett["bilde"],rett["beskrivelse"],rett["pris"]) for rett in meny1])
 con.commit()
