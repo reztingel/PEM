@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import requests
 
 
 app = Flask(__name__)
@@ -11,6 +12,14 @@ def index():
 
 
 
+@app.route('/get_product/<product_id>', methods = ["GET","POST"])
+def get_product(product_id):
+    if product_id is None:
+        return "No product ID provided"
+    url = 'https://fakestoreapi.com/products/' + product_id
+    response = requests.get(url)
+    data = response.json()
+    return render_template("productt.html", data=data)
 
 
 
