@@ -14,7 +14,7 @@ cur = con.cursor()
 
 @app.route('/get_image/<image_name>', methods = ["GET"])
 def get_image(image_name):
-    return send_from_directory('C:\Users\Ton\OneDrive - Innlandet fylkeskommune\Skrivebord\Eksamenforbredning\Backend\static\images', image_name)
+    return send_from_directory(r"C:\Users\Ton\OneDrive - Innlandet fylkeskommune\Skrivebord\Eksamenforbredning\Backend\static\images", image_name)
 
 
 @app.route('/get_resturanger', methods = ["GET"])
