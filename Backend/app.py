@@ -1,4 +1,4 @@
-from flask import Flask, request, send_from_directory
+from flask import Flask, request, send_from_directory, jsonify
 from flask_cors import CORS
 import sqlite3
 
@@ -50,4 +50,4 @@ def resturang_meny():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5010)
+    app.run(debug=True, port=5001)
