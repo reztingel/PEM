@@ -2,9 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import requests
 from flask_cors import CORS
 from flask.cli import FlaskGroup
-from src import app
 
-cli = FlaskGroup(app)
 
 
 app = Flask(__name__)
@@ -34,8 +32,7 @@ def get_resturang(sid):
 
 
 
-if __name__ =="__main__":
-    cli()
+
 
 if __name__ =="__main__":
     app.run(debug=True, port=5000)
