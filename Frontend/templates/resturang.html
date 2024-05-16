@@ -2,14 +2,17 @@
 
 {% block content %}
 
+<a href="{{ url_for('index') }}"><button>Home</button></a>
+
+
 <h2>Resturang: {{resturang.1}}</h2>
 <ul>
 {% for rett in meny %}
     <li>
         <h3>{{rett.rett}}</h3>
-        <img class="rett_bilde" src="http://127.0.0.1:510/get_image/{{rett.bilde}}" alt="bilde til {{rett.rett}}">
+        <img class="rett_bilde" src="http://127.0.0.1:5001/get_image/{{rett.bilde}}" alt="bilde til {{rett.rett}}">
         <p>{{rett.beskrivelse}}</p>
-        <p>{{rett.pris}}</p>
+        <p>Pris: {{rett.pris}}kr</p>
     </li>
 {% endfor %}
 </ul>
